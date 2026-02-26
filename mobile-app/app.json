@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Travel Agent Mobile",
+    "slug": "travel-agent-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0f172a"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": ["remote-notification"]
+      }
+    },
+    "android": {},
+    "extra": {
+      "apiBaseUrl": "http://127.0.0.1:8000/api"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "color": "#4F86FF"
+        }
+      ]
+    ]
+  }
+}
