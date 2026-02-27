@@ -9,11 +9,15 @@
       "resizeMode": "contain",
       "backgroundColor": "#0f172a"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "UIBackgroundModes": ["remote-notification"]
+        "UIBackgroundModes": [
+          "remote-notification"
+        ]
       }
     },
     "android": {},
@@ -26,7 +30,8 @@
         {
           "color": "#4F86FF"
         }
-      ]
+      ],
+      "expo-font"
     ]
   }
 }
