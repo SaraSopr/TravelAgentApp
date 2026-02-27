@@ -5,9 +5,30 @@ import { clearSessionStorage, saveSession } from '@/services/storage';
 import { AuthPayload } from '@/services/types';
 import { useAuthStore } from '@/store/authStore';
 
-const apiBaseUrl =
+const configuredApiBaseUrl =
   (Constants.expoConfig?.extra?.apiBaseUrl as string | undefined) ||
   'http://127.0.0.1:8000/api';
+
+function resolveApiBaseUrl() {
+  const usesLoopback = /localhost|127\.0\.0\.1/.test(configuredApiBaseUrl);
+  if (!usesLoopback) {
+    return configuredApiBaseUrl;
+  }
+
+  const hostUri = Constants.expoConfig?.hostUri;
+  if (!hostUri) {
+    return configuredApiBaseUrl;
+  }
+
+  const host = hostUri.split(':')[0];
+  if (!host) {
+    return configuredApiBaseUrl;
+  }
+
+  return `http://${host}:8000/api`;
+}
+
+const apiBaseUrl = resolveApiBaseUrl();
 
 export const api = axios.create({
   baseURL: apiBaseUrl,
