@@ -9,3 +9,5 @@ __pycache__/
 .env
 .expo/
 mobile-app/.expo/
+node_modules/
+mobile-app/node_modules/
